@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta http-equiv="refresh" content="60">
+        
+        <title id="title">Chathulan JEGATHEESWARAN - Mon Portfolio</title>
+        
+        <link rel="stylesheet" href="style.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;900&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+        
+    </head>
+    <body>
+        
+        <div class="static-pattern"></div>
+        <div class="hex-pattern"></div>
+        <div class="grid-overlay"></div>
+        <div class="bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+        
+        <header>
+            <div class="header-utility-bar">
+                <div class="container utility-content">
+                   <a href="/Users/chathulan/Desktop/Portfolio/Portfolio/IFFP_Chathulan JEGATHEESWARAN_Technicien Support IT.pdf" download class="cv-download-link">
+                        <i class="fas fa-file-download"></i> CV
+                    </a>
+                    
+                    <div class="language-selector-dropdown" id="lang-selector">
+                        <div class="current-lang" onclick="toggleLangDropdown()">
+                            <span class="flag-icon flag-icon-fr"></span> <span id="current-lang-code">Fr</span> <i class="fas fa-caret-down"></i>
+                        </div>
+                        <ul class="lang-options" id="lang-options">
+                            <li onclick="setLanguage('fr')">
+                                <span class="flag-icon flag-icon-fr"></span> Français
+                            </li>
+                            <li onclick="setLanguage('en')">
+                                <span class="flag-icon flag-icon-gb"></span> English
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container header-content">
+                <h1>Chathulan JEGATHEESWARAN</h1>
+                <p class="subtitle">Étudiant en BTS SIO option SISR |À la recherche d'une alternance de 24 mois - Dès Novembre 2025</p>
+            </div>
+            
+            <nav>
+                <div class="container">
+                    <a href="#profil" onclick="scrollToSection('profil')" data-lang-key="nav_profil">Mon Profil</a>
+                    <a href="#competences" onclick="scrollToSection('competences')" data-lang-key="nav_competences">Compétences</a>
+                    <a href="#experiences" onclick="scrollToSection('experiences')" data-lang-key="nav_experiences">Expériences</a>
+                    <a href="#formations" onclick="scrollToSection('formations')" data-lang-key="nav_formations">Formations</a>
+                    <a href="#language-section" onclick="scrollToSection('language-section')" data-lang-key="nav_langues">Langue</a>
+                    <a href="#interets" onclick="scrollToSection('interets')" data-lang-key="nav_interets">Intérêts</a>
+                    <a href="#contact" onclick="scrollToSection('contact')" data-lang-key="nav_contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            <section id="profil" class="section-padding">
+                <div class="container">
+                    <h2>Mon Profil </h2>
+                    <div class="profile-card">
+                        <p data-lang-key="profil_p1">Actuellement en BTS SIO à l'école IFFP de Nanterre, je suis à la recherche d'une alternance de 24 mois pour un poste Technicien Support IT, je suis un jeune professionnel orienté vers la fiabilité des systèmes et l'excellence du service utilisateur, désireux de mettre mes connaissances techniques et mon sens du service à profit pour optimiser l'expérience de l'équipe et assurer une assistance rapide et efficace.</p>
+                        <p class="highlight-info" data-lang-key="profil_highlight">Rythme: 3 jours en entreprise / 2 jours en formation</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="competences" class="bg-light section-padding">
+                <div class="container">
+                    <h2>Compétences</h2>
+                    <div class="skills-grid">
+                        
+                        <div class="savoir-etre">
+                            <h3>Savoir-Être</h3>
+                            <ul>
+                                <li data-lang-key="soft_skills_1"><i class="fas fa-handshake"></i> Sens du service</li>
+                                <li data-lang-key="soft_skills_2"><i class="fas fa-users"></i> Esprit d’équipe et travail en équipe</li>
+                                <li data-lang-key="soft_skills_3"><i class="fas fa-brain"></i> Esprit analytique et méthodique</li>
+                                <li data-lang-key="soft_skills_4"><i class="fas fa-check-double"></i> Rigueur</li>
+                                <li data-lang-key="soft_skills_5"><i class="fas fa-user-tie"></i> Autonomie</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="savoir-faire-tech">
+                            <h3>Savoir-faire</h3>
+                            <dl>
+                                <dt data-lang-key="tech_os">OS & Virtualisation</dt>
+                                <dd data-lang-key="tech_os_desc">Windows 10/11, Linux, Debian</dd>
+                                <dt data-lang-key="tech_prog">Programmation & Développement</dt>
+                                <dd data-lang-key="tech_prog_desc">HTML, CSS, Javascript, Python</dd>
+                                <dt data-lang-key="tech_db">Base de données & Serveur</dt>
+                                <dd data-lang-key="tech_db_desc">MySQL, Apache, MAMP</dd>
+                                <dt data-lang-key="tech_ticket">Gestion de ticketing</dt>
+                                <dd data-lang-key="tech_ticket_desc">Unity, OPTIMIT, GLPI</dd>
+                                <dt data-lang-key="tech_network">Réseaux & Infrastructure</dt>
+                                <dd data-lang-key="tech_network_desc">Cisco Packet Tracer, IPv4, TCP/IP, Wireshark</dd>
+                                <dt data-lang-key="tech_office">Bureautique & Support</dt>
+                                <dd data-lang-key="tech_office_desc">Office 365, Assistance technique et gestion des incidents</dd>
+                            </dl>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            <section id="language-section" class="section-padding">
+                <div class="container">
+                    <h2>Langue</h2>
+                    <div class="language-grid">
+                        <div class="language-item">
+                            <p data-lang-key="lang_bilingue">Anglais: Bilingue</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="experiences" class="bg-light section-padding">
+                <div class="container">
+                    <h2>Expériences Professionnelles</h2>
+                    
+                    <article class="experience-item">
+                        <span class="date">12/2024 - 06/2025</span>
+                        <h3 data-lang-key="exp1_title">Technicien de proximité Informatique - CDD</h3>
+                        <p class="company" data-lang-key="exp1_company">Société Générale, Fontenay-sous-Bois</p>
+                        <div class="details-content">
+                            <ul>
+                                <li data-lang-key="exp1_task1">Assurer le support N1 et la résolution d'incidents techniques.</li>
+                                <li data-lang-key="exp1_task2">Gérer les demandes d'assistance via l'outil de ticketing.</li>
+                                <li data-lang-key="exp1_task3">Installer, configurer et maintenir les postes de travail (Windows 10/11) et les périphériques.</li>
+                                <li data-lang-key="exp1_task4">Rédiger la documentation technique et garantir la traçabilité des interventons.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <span class="date">05/2023 - 07/2023</span>
+                        <h3 data-lang-key="exp2_title">Développeur Web - Stage (6 semaines)</h3>
+                        <p class="company" data-lang-key="exp2_company">CAPAUTO, Drancy</p>
+                        <div class="details-content">
+                            <ul>
+                                <li data-lang-key="exp2_task1">Concevoir un site vitrine en HTML, CSS et JavaScript en respectant le cahier des charges.</li>
+                                <li data-lang-key="exp2_task2">Optimiser l'affichage responsive et l'interface du site web.</li>
+                                <li data-lang-key="exp2_task3">Contribuer à l'optimisation du référencement (SEO).</li>
+                                <li data-lang-key="exp2_task4">Tester et corriger les erreurs pour améliorer les performances de chargement.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <span class="date">11/2021 - 12/2021</span>
+                        <h3 data-lang-key="exp3_title">Technicien Informatique - Stage (5 semaines)</h3>
+                        <p class="company" data-lang-key="exp3_company">GEODEAL, Bondy</p>
+                        <div class="details-content">
+                            <ul>
+                                <li data-lang-key="exp3_task1">Réinstaller et déployer le système d'exploitation Windows sur un lot de postes utilisateurs.</li>
+                                <li data-lang-key="exp3_task2">Démonter, nettoyer et entretenir les unités centrales.</li>
+                                <li data-lang-key="exp3_task3">Configurer et masteriser les tablettes Surface Pro.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <section id="formations" class="section-padding">
+                <div class="container">
+                    <h2>Formations</h2>
+                    <div class="formation-list">
+                        <div class="formation-item">
+                            <p class="date">2025 - 2027</p>
+                            <h4 data-lang-key="form1_title">BTS SIO option SISR en contrat d’apprentissage</h4>
+                            <p data-lang-key="form1_location">IFFP, Nanterre</p>
+                        </div>
+                        <div class="formation-item">
+                            <p class="date">2022 - 2024</p>
+                            <h4 data-lang-key="form2_title">BTS Systèmes Numériques option IR</h4>
+                            <p data-lang-key="form2_location">Lycée Le Corbusier, Aubervilliers (Non obtenu)</p>
+                        </div>
+                        <div class="formation-item">
+                            <p class="date">2019 - 2022</p>
+                            <h4 data-lang-key="form3_title">Baccalauréat Professionnel Systèmes Numériques</h4>
+                            <p data-lang-key="form3_location">Lycée Alfred Costes, Bobigny</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="interets" class="bg-light section-padding">
+                <div class="container">
+                    <h2>Centres d'Intérêt</h2>
+                    <div class="interet-list">
+                        <ul>
+                            <li data-lang-key="int_vg"><i class="fas fa-gamepad"></i> Jeux-vidéos: Développement de la stratégie, esprit d’équipe (en ligne).</li>
+                            <li data-lang-key="int_muscu"><i class="fas fa-dumbbell"></i> Musculation: Pratique régulière.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+        <footer id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:chathulan93@gmail.com">chathulan93@gmail.com</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/chathulanjegatheeswaran" target="_blank">linkedin.com/in/chathulanjegatheeswaran</a></p>
+                </div>
+                
+                <p class="footer-note">Portfolio de Chathulan JEGATHEESWARAN | &copy; 2025</p>
+            </div>
+        </footer>
+        
+        <script src="translation.js"></script>
+        
+        <script>
+            // Fonction pour le défilement fluide de la navigation
+            function scrollToSection(id) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            
+            // Fonction pour ouvrir/fermer le menu déroulant
+            function toggleLangDropdown() {
+                // Cette fonction utilise la classe 'show' pour afficher/masquer le menu
+                document.getElementById('lang-options').classList.toggle('show');
+            }
+            
+            // Fermer le menu si l'utilisateur clique en dehors
+            window.onclick = function(event) {
+                if (!event.target.closest('#lang-selector')) {
+                    const dropdowns = document.getElementsByClassName('lang-options');
+                    for (let i = 0; i < dropdowns.length; i++) {
+                        const openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
+        
+    </body>
+</html>
