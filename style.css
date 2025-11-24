@@ -1,0 +1,791 @@
+@charset "utf-8";
+/* CSS Document Fusionné - Style Cyberpunk adapté pour le CV */
+
+/* ================================================= */
+/* 1. RÉINITIALISATION & VARIABLES CYBERPUNK/NEON */
+/* ================================================= */
+
+:root {
+    /* Couleurs de base Neon */
+    --neon-pink: #d1346e;
+    --neon-blue: #40c4cc;
+    --neon-purple: #7b45c7;
+    --muted-pink: #b8306a;
+    --muted-blue: #3a9da3;
+    --muted-purple: #6d3fb3;
+    
+    /* Dégradés */
+    --primary-gradient: linear-gradient(135deg, var(--neon-pink), var(--neon-purple), var(--neon-blue));
+    --muted-gradient: linear-gradient(135deg, var(--muted-pink), var(--muted-purple), var(--muted-blue));
+
+    /* Couleurs de texte et de fond */
+    --dark-bg: #0a0a0a;
+    --card-bg: rgba(20, 20, 20, 0.8); /* Fond des cartes semi-transparent */
+    --text-primary: #e0e0e0; /* Texte principal clair */
+    --text-secondary: #9a9a9a; /* Texte secondaire/muet */
+    
+    /* Polices */
+    --font-family: 'Exo 2', sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
+}
+
+* {
+    /*margin: 0;*/
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background: #000000;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    position: relative;
+    font-weight: 400;
+}
+
+/* ================================================= */
+/* 2. EFFETS DE FOND (Gradients, Grilles, Shapes) */
+/* ================================================= */
+
+/* Gradient background with more color */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(135deg,
+            #0a0014 0%,
+            #1a0a2e 25%,
+            #16213e 50%,
+            #0f3460 75%,
+            #0a0014 100%),
+        radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(255, 0, 110, 0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at center, rgba(0, 245, 255, 0.15) 0%, transparent 60%);
+    z-index: -3;
+}
+
+/* Additional color overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 110, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
+    z-index: -3;
+    animation: gradientShift 15s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.8; transform: scale(1.1) rotate(180deg); }
+}
+
+/* Static pattern overlay (bruit/scanlines) */
+.static-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.05;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.1) 2px, rgba(255, 255, 255, 0.1) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.1) 2px, rgba(255, 255, 255, 0.1) 4px);
+    background-size: 100px 100px;
+}
+
+/* Hexagon pattern */
+.hex-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.03;
+    /* Utilisation d'un SVG de base d'hexagone */
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='50,1 95,25 95,75 50,99 5,75 5,25' fill='none' stroke='%23ff006e' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+    animation: hexFloat 30s linear infinite;
+}
+
+@keyframes hexFloat {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100px, -100px); }
+}
+
+/* Animated geometric shapes */
+.bg-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 20s infinite ease-in-out;
+    filter: blur(1px);
+}
+
+/* Styles et positions des shapes (conservés du bloc 2) */
+.shape-1 {
+    width: 300px; height: 300px;
+    background: linear-gradient(45deg, rgba(255, 0, 110, 0.4), rgba(138, 43, 226, 0.4));
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    top: 10%; left: 10%; animation-duration: 25s; animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 200px; height: 200px;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.4), rgba(255, 0, 149, 0.4));
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 60%; right: 20%; animation-duration: 30s; animation-delay: 5s;
+}
+
+.shape-3 {
+    width: 150px; height: 150px;
+    background: linear-gradient(90deg, rgba(138, 43, 226, 0.4), rgba(58, 134, 255, 0.4));
+    border-radius: 50%;
+    top: 40%; left: 50%; animation-duration: 22s; animation-delay: 10s;
+}
+
+.shape-4 {
+    width: 250px; height: 250px;
+    background: linear-gradient(180deg, rgba(255, 0, 110, 0.4), rgba(255, 77, 0, 0.4));
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    bottom: 10%; left: 30%; animation-duration: 28s; animation-delay: 3s;
+}
+
+.shape-5 {
+    width: 180px; height: 180px;
+    background: linear-gradient(45deg, rgba(0, 245, 255, 0.4), rgba(138, 43, 226, 0.4));
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    top: 20%; right: 40%; animation-duration: 35s; animation-delay: 8s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.1; }
+    25% { transform: translate(100px, -50px) rotate(90deg) scale(1.1); opacity: 0.15; }
+    50% { transform: translate(-50px, 100px) rotate(180deg) scale(0.9); opacity: 0.2; }
+    75% { transform: translate(-100px, -50px) rotate(270deg) scale(1.05); opacity: 0.15; }
+}
+
+/* Grid pattern overlay with color */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(138, 43, 226, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 110, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    animation: gridMove 10s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* ================================================= */
+/* 3. STRUCTURE DE BASE DU CONTENU */
+/* ================================================= */
+
+.container {
+    /*width: 90%;*/
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--neon-blue); /* Couleur des titres */
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    /* Remplacement du bord uni par une ombre néon */
+    border-bottom: 2px solid var(--muted-blue);
+    box-shadow: 0 5px 10px rgba(64, 196, 204, 0.1);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Style de base des sections */
+.section-padding {
+    padding: 60px 0;
+    position: relative; /* Nécessaire pour les effets de fond */
+    /* Petite ombre pour les sections de contenu */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.bg-light {
+    background: rgba(10, 10, 10, 0.6); /* Fond sombre semi-transparent */
+}
+
+
+/* ================================================= */
+/* 4. HEADER & NAVIGATION (Adaptation du style Cyberpunk) */
+/* ================================================= */
+
+header {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 25px 0 0; /* Ajout d'un padding pour l'espace */
+    border-bottom: 1px solid var(--muted-pink);
+    z-index: 10;
+    position: relative;
+}
+
+.header-content {
+    text-align: center;
+}
+
+header h1 {
+    color: var(--text-primary);
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.subtitle {
+    font-family: var(--font-mono);
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+nav {
+    background: rgba(10, 10, 10, 0.8);
+    text-align: center;
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 8px var(--neon-pink);
+    background-color: rgba(64, 196, 204, 0.05);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================================================= */
+/* 4.5. BARRE UTILITAIRE (CV & SÉLECTEUR DE LANGUE) */
+/* ================================================= */
+
+.header-utility-bar {
+    /* Positionné au-dessus du h1 */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Garder le fond sombre */
+    border-bottom: 1px solid var(--neon-blue); /* Bordure tech */
+    padding: 5px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.utility-content {
+    /* Utilise Flexbox pour aligner les éléments sur les bords */
+    display: flex;
+    justify-content: space-between; /* Aligne les éléments à droite */
+    align-items: center;
+    gap: 25px; /* Espace entre le CV et le sélecteur */
+}
+
+.site-logo {
+    /* Taille moyenne pour être visible et non envahissant */
+    height: 30px; /* Hauteur standard pour un logo dans un en-tête */
+    width: auto;
+    /* Effet léger de lueur Cyberpunk */
+    filter: drop-shadow(0 0 5px var(--neon-blue)) grayscale(10%);
+    transition: all 0.3s ease;
+}
+
+.site-logo:hover {
+    filter: drop-shadow(0 0 8px var(--neon-pink));
+    transform: scale(1.05);
+}
+
+.logo-link {
+    line-height: 0;
+}
+
+/* Style du lien de téléchargement du CV */
+.cv-download-link {
+    color: var(--neon-pink);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.cv-download-link:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 8px var(--neon-pink); /* Effet néon au survol */
+}
+
+/* --- STYLES POUR LE SÉLECTEUR DE LANGUE --- */
+
+.language-selector-dropdown {
+    position: relative;
+    font-size: 14px;
+    font-family: var(--font-mono);
+    z-index: 110;
+}
+
+.current-lang {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--neon-blue); /* Couleur principale pour le sélecteur */
+    background-color: var(--card-bg);
+    padding: 6px 12px;
+    border: 1px solid var(--muted-blue);
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.current-lang:hover {
+    background-color: rgba(64, 196, 204, 0.1); /* Légère lueur */
+    border-color: var(--neon-blue);
+}
+
+.current-lang .flag-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.current-lang .fa-caret-down {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+/* Menu des options de langue */
+.lang-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    background-color: var(--dark-bg);
+    border: 1px solid var(--neon-purple);
+    border-radius: 4px;
+    min-width: 130px;
+    box-shadow: 0 4px 15px rgba(123, 69, 199, 0.4); /* Ombre néon */
+    
+    /* Cache le menu par défaut (animation) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.lang-options.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-options li {
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lang-options li:last-child {
+    border-bottom: none;
+}
+
+.lang-options li:hover {
+    background-color: var(--neon-purple); /* Met en évidence l'option au survol */
+    color: var(--dark-bg); /* Texte sombre sur fond néon */
+    text-shadow: 0 0 5px var(--text-primary);
+}
+
+.lang-options li .flag-icon {
+    margin-right: 10px;
+}
+
+
+/* ================================================= */
+/* 5. SECTION PROFIL */
+/* ================================================= */
+.profile-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(123, 69, 199, 0.3);
+    border: 1px solid var(--muted-purple);
+}
+
+.profile-card p {
+    color: var(--text-primary);
+}
+
+.highlight-info {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--neon-pink);
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(209, 52, 110, 0.5);
+    border-top: 1px dashed var(--muted-pink);
+    padding-top: 10px;
+}
+
+/* ================================================= */
+/* 6. SECTION SAVOIR-FAIRE (COMPÉTENCES) */
+/* ================================================= */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.savoir-etre, .savoir-faire-tech {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(64, 196, 204, 0.15);
+    border: 1px solid rgba(64, 196, 204, 0.2);
+}
+
+.savoir-etre ul {
+    list-style: none;
+}
+
+.savoir-etre li {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    transition: color 0.3s;
+}
+
+.savoir-etre li:hover {
+    color: var(--neon-pink);
+}
+
+.savoir-etre i {
+    color: var(--neon-purple);
+    margin-right: 10px;
+}
+
+/* Savoir-Faire Professionnel (Liste de définition) */
+.savoir-faire-tech h3 {
+    margin-bottom: 1.5rem;
+}
+
+.savoir-faire-tech dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
+
+.savoir-faire-tech dt {
+    font-weight: 600;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    border-bottom: 1px dotted rgba(64, 196, 204, 0.3);
+}
+
+.savoir-faire-tech dd {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.language {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--muted-purple);
+}
+.language h4 {
+    color: var(--neon-pink);
+    text-shadow: none;
+}
+.language p {
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+}
+
+
+/* ================================================= */
+/* 7. SECTION EXPÉRIENCES */
+/* ================================================= */
+.experience-item {
+    border-left: 5px solid var(--neon-pink);
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    background: var(--card-bg);
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 1px 15px rgba(209, 52, 110, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(209, 52, 110, 0.3);
+}
+
+.experience-item .date {
+    display: block;
+    font-family: var(--font-mono);
+    color: var(--neon-blue);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.experience-item h3 {
+    margin: 0;
+    font-size: 1.3em;
+    color: var(--text-primary);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.company {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.details-content ul {
+    color: var(--text-secondary);
+    padding-left: 20px;
+}
+
+.details-content li {
+    margin-bottom: 5px;
+}
+
+
+/* ================================================= */
+/* 8. SECTION FORMATIONS & INTÉRÊTS */
+/* ================================================= */
+.formation-list, .interet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formation-item {
+    padding: 15px;
+    border: 1px solid var(--muted-purple);
+    border-radius: 5px;
+    background: rgba(10, 10, 10, 0.8);
+    transition: border-color 0.3s;
+}
+
+.formation-item:hover {
+    border-color: var(--neon-purple);
+}
+
+.formation-item .date {
+    font-weight: 600;
+    color: var(--neon-pink);
+    font-family: var(--font-mono);
+}
+
+.formation-item h4 {
+    margin: 5px 0 2px;
+    color: var(--neon-blue);
+    font-size: 1.1em;
+}
+
+.formation-item p {
+    color: var(--text-secondary);
+}
+
+.interet-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.interet-list li {
+    padding: 10px 0;
+    color: var(--text-primary);
+}
+
+.interet-list i {
+    color: var(--neon-pink);
+    margin-right: 10px;
+}
+
+
+/* ================================================= */
+/* 9. FOOTER & CONTACT */
+/* ================================================= */
+footer {
+    background: var(--dark-bg);
+    color: var(--text-primary);
+    padding: 40px 0 20px;
+    text-align: center;
+    border-top: 2px solid var(--muted-blue);
+}
+
+footer h2 {
+    color: var(--neon-pink);
+    border: none;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(209, 52, 110, 0.5);
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 1.1em;
+    color: var(--text-secondary);
+}
+
+.contact-info i {
+    color: var(--neon-blue);
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px rgba(209, 52, 110, 0.5);
+}
+
+/* Bouton Actualiser */
+.btn-refresh {
+    font-family: var(--font-mono);
+    background: var(--muted-gradient);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(123, 69, 199, 0.4);
+}
+
+.btn-refresh:hover {
+    background: var(--primary-gradient);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 20px rgba(123, 69, 199, 0.6);
+}
+
+.footer-note {
+    font-family: var(--font-mono);
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #555;
+}
+
+
+/* ================================================= */
+/* 10. RESPONSIVE (MÉDIAS QUERIES) */
+/* ================================================= */
+@media (max-width: 768px) {
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 0.9em;
+    }
+    
+    nav a {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Changement de la grille des compétences pour mobile */
+    .skills-grid {
+        flex-direction: column;
+    }
+    
+    .savoir-etre, .savoir-faire-tech {
+        min-width: 100%;
+    }
+    
+    .savoir-faire-tech dl {
+        grid-template-columns: 1fr; /* Une colonne pour les termes/définitions */
+    }
+    
+    .savoir-faire-tech dt {
+        text-decoration: underline;
+        margin-top: 10px;
+    }
+    
+    .formation-list {
+        flex-direction: column;
+    }
+}
