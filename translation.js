@@ -2,7 +2,7 @@ const translations = {
     fr: {
         // En-tête
         title: "Chathulan JEGATHEESWARAN", // Ajouté pour le document.title
-        subtitle: "Technicien Support IT | Alternance 24 mois - Dès Novembre 2025",
+        subtitle: "Technicien Support IT | Alternance 24 mois - Disponibilité immédiat",
 
         // Navigation
         nav_profil: "Mon Profil",
@@ -46,8 +46,10 @@ const translations = {
         tech_ticket_desc: "Unity, OPTIMIT, GLPI",
         tech_network: "Réseaux & Infrastructure",
         tech_network_desc: "Cisco Packet Tracer, IPv4, TCP/IP, Wireshark",
-        tech_office: "Bureautique & Support",
-        tech_office_desc: "Office 365, Assistance technique et gestion des incidents",
+        tech_office: "Bureautique",
+        tech_office_desc: "Office 365",
+        tech_office: "Support",
+        tech_office_desc: "Assistance technique et gestion des incidents",
 
         // Langues
         lang_bilingue: "Anglais: Bilingue",
@@ -94,7 +96,7 @@ const translations = {
     en: {
         // En-tête
         title: "Chathulan JEGATHEESWARAN - My Portfolio", // Ajouté pour le document.title
-        subtitle: "IT Support Technician | 24-month Apprenticeship - Starting November 2025",
+        subtitle: "IT Support Technician | 24-month Apprenticeship -  Immediately Available",
 
         // Navigation
         nav_profil: "My Profile",
@@ -138,8 +140,10 @@ const translations = {
         tech_ticket_desc: "Unity, OPTIMIT, GLPI",
         tech_network: "Network & Infrastructure",
         tech_network_desc: "Cisco Packet Tracer, IPv4, TCP/IP, Wireshark",
-        tech_office: "Office & Support",
-        tech_office_desc: "Office 365, Technical assistance and incident management",
+        tech_office: "Software Suites",
+        tech_office_desc: "Office 365",
+        tech_office: "Support",
+        tech_office_desc: "Technical assistance and incident management",
 
         // Langues
         lang_bilingue: "English: Bilingual",
@@ -166,11 +170,11 @@ const translations = {
         exp3_task3: "Configure and master the Surface Pro tablets.",
 
         // Formations
-        form1_title: "BTS SIO option SISR (IT Services for Organizations) - Apprenticeship",
+        form1_title: " Higher National Diploma (IT Services and Infrastructure) - SpecializaEon in Infrastructure, Systems, and Network Solutions -  BTS SIO option SISR - Apprenticeship",
         form1_location: "IFFP, Nanterre",
-        form2_title: "BTS Systèmes Numériques option IR (Digital Systems - Networks)",
-        form2_location: "Lycée Le Corbusier, Aubervilliers (Not obtained)",
-        form3_title: "Professional Baccalaureate Digital Systems",
+        form2_title: "Higher National Diploma (Digital Systems - Networks) - BTS Systèmes Numériques option IR",
+        form2_location: "Lycée Le Corbusier, Aubervilliers (Not completed)",
+        form3_title: "Level 3 National Diploma (BTEC) Digital Systems - (Bac Professionnel Systèmes Numériques)",
         form3_location: "Lycée Alfred Costes, Bobigny",
 
         // Intérêts
