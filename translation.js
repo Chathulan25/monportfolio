@@ -48,8 +48,8 @@ const translations = {
         tech_network_desc: "Cisco Packet Tracer, IPv4, TCP/IP, Wireshark",
         tech_office: "Bureautique",
         tech_office_desc: "Office 365",
-        tech_office: "Support",
-        tech_office_desc: "Assistance technique et gestion des incidents",
+        tech_support: "Support",
+        tech_support_desc: "Assistance technique et gestion des incidents",
 
         // Langues
         lang_bilingue: "Anglais: Bilingue",
@@ -142,8 +142,8 @@ const translations = {
         tech_network_desc: "Cisco Packet Tracer, IPv4, TCP/IP, Wireshark",
         tech_office: "Software Suites",
         tech_office_desc: "Office 365",
-        tech_office: "Support",
-        tech_office_desc: "Technical assistance and incident management",
+        tech_support: "Support",
+        tech_support_desc: "Technical assistance and incident management",
 
         // Langues
         lang_bilingue: "English: Bilingual",
