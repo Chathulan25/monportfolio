@@ -48,8 +48,8 @@ const translations = {
         tech_network_desc: "Cisco Packet Tracer, IPv4, TCP/IP, Wireshark",
         tech_office: "Bureautique",
         tech_office_desc: "Office 365",
-        tech_support_fr: "Support",
-        tech_support_desc_fr: "Assistance technique et gestion des incidents",
+        tech_support: "Support",
+        tech_support_desc: "Assistance technique et gestion des incidents",
 
         // Langues
         lang_bilingue: "Anglais: Bilingue",
@@ -140,10 +140,10 @@ const translations = {
         tech_ticket_desc: "Unity, OPTIMIT, GLPI",
         tech_network: "Network & Infrastructure",
         tech_network_desc: "Cisco Packet Tracer, IPv4, TCP/IP, Wireshark",
-        tech_office: "Software Suites",
+        tech_office: "Office",
         tech_office_desc: "Office 365",
-        tech_support_en: "Support",
-        tech_support_desc_en: "Technical assistance and incident management",
+        tech_support: "Support",
+        tech_support_desc: "Technical assistance and incident management",
 
         // Langues
         lang_bilingue: "English: Bilingual",
