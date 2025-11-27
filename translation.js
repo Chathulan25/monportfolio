@@ -60,7 +60,7 @@ const translations = {
         exp1_task1: "Assurer le support N1 et la résolution d'incidents techniques.",
         exp1_task2: "Gérer les demandes d'assistance via l'outil de ticketing.",
         exp1_task3: "Installer, configurer et maintenir les postes de travail (Windows 10/11) et les périphériques.",
-        exp1_task4: "Garantir le Maintien en Condition Opérationnelle (MCO) de l'environnement informatique.",
+        exp1_task4: "Rédiger la documentation technique et garantir la traçabilité des interventions.",
 
         exp2_title: "Développeur Web - Stage (6 semaines)",
         exp2_company: "CAPAUTO, Drancy",
